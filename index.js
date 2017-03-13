@@ -1,11 +1,20 @@
-var hapi = require('hapi');
+const Hapi = require('hapi');
+const server = new Hapi.Server();
 
-var server = new hapi.Server();
-server.connect(){
-  host:'localhost',
-  port:8080
+server.connection({host:'localhost', port: 8080 });
+server.route({
+  method: 'POST',
+  path: '/subscribe',
+  handler: (request, reply) => {
+    return reply({
+      result: 'success'
+    });
+  }
+});
+if (!module.parent) {
+server.start(error => {
+  process.exit(1);
+});
 }
 
-server.start(()=>{
-  console.log("listen to localhost:8080");
-});
+module.exports = server;

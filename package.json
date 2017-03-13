@@ -1,0 +1,30 @@
+{
+  "name": "ammblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "hapi": "^16.1.0",
+    "shot": "^3.4.0",
+    "istanbul": "^0.4.5",
+    "tape": "^4.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhmdshorafa/ammblog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhmdshorafa/ammblog/issues"
+  },
+  "homepage": "https://github.com/mhmdshorafa/ammblog#readme"
+}
