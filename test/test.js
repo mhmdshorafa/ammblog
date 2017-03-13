@@ -12,7 +12,7 @@ test('endpoint test | POST /subscribe | empty payload -> 400 Bad Request', t => 
 
   return server.inject(request)
     .then(response => {
-      t.is(response.statusCode, 200, 'status code is 400');
+      t.is(response.statusCode, 400, 'status code is 400');
       t.end();
     });
 });

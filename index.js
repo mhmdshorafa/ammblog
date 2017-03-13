@@ -6,9 +6,13 @@ server.route({
   method: 'POST',
   path: '/subscribe',
   handler: (request, reply) => {
-    return reply({
-      result: 'success'
-    });
+
+    if (!request.payload.email) {
+          return reply({
+            result: 'failure',
+            message: 'Email address is required.'
+          }).code(400);
+        }
   }
 });
 if (!module.parent) {
