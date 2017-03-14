@@ -1,14 +1,14 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 
-server.connection({host:'localhost', port: 8080 });
+server.connection({host:'localhost', port: 3345 });
 
 server.route({
   method: 'GET',
   path: '/',
   handler: (request, reply) => {
 
- reply("Hello");
+    return reply("Hello");
   }
 });
 server.route({
@@ -24,10 +24,8 @@ server.route({
         }
   }
 });
-if (!module.parent) {
-server.start(error => {
-  process.exit(1);
-});
-}
+
+server.start(()=>{console.log('listento port');});
+
 
 module.exports = server;
