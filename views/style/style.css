@@ -39,7 +39,7 @@ body {
 }
 
 header {
-  background-image: url('../images/artimg.jpg');
+  background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   /*background: -webkit-linear-gradient(top, rgba(44, 62, 80, 1) 50%, rgba(236, 240, 241, 1) 60%);*/
