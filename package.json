@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "pasto",
   "version": "1.0.0",
   "description": "We always get food late and sometimes have no choice. The super app of Hani didn't really work, let's help him. Build a website where everyday we can oder breakfast and lunch. When visiting it the user should see a form with a time deadline. Each order is saved on a Google Sheet and at a specific time, 10:00am for breakfast and 02:00pm for lunch. The breakfast Orders will be sent to Hani1, and the lunch Orders will be sent to Hani2 on the phone as an SMS.",
@@ -14,10 +15,35 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gazaskygeeks/Pasto.git"
+=======
+  "name": "ammblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "hapi": "^16.1.0",
+    "shot": "^3.4.0",
+    "istanbul": "^0.4.5",
+    "tape": "^4.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ./test/test.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhmdshorafa/ammblog.git"
+>>>>>>> 2c9a6157179f4ad4153a24eb40f4e0de61feba8b
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
     "url": "https://github.com/gazaskygeeks/Pasto/issues"
   },
   "homepage": "https://github.com/gazaskygeeks/Pasto#readme",
@@ -34,4 +60,9 @@
     "istanbul": "^0.4.5",
     "nodemon": "^1.11.0"
   }
+=======
+    "url": "https://github.com/mhmdshorafa/ammblog/issues"
+  },
+  "homepage": "https://github.com/mhmdshorafa/ammblog#readme"
+>>>>>>> 2c9a6157179f4ad4153a24eb40f4e0de61feba8b
 }

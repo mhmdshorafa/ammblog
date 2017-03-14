@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pasto
 
 [![Build Status](https://travis-ci.org/gazaskygeeks/pasto.svg?branch=master)](https://travis-ci.org/gazaskygeeks/pasto)
@@ -80,3 +81,9 @@ Original team:
 ## Sketch
 
 ![alt text](https://scontent.fjrs2-1.fna.fbcdn.net/v/t34.0-12/16997507_10206350716085054_872691707_n.jpg?oh=c2f84b3ad54dba9bf3ce6243fbf6784b&oe=58B65083 "Sketch")
+=======
+[![Build Status](https://travis-ci.org/mhmdshorafa/ammblog.svg?branch=master)](https://travis-ci.org/mhmdshorafa/ammblog)
+[![Code Climate](https://codeclimate.com/github/mhmdshorafa/ammblog/badges/gpa.svg)](https://codeclimate.com/github/mhmdshorafa/ammblog)
+[![Test Coverage](https://codeclimate.com/github/mhmdshorafa/ammblog/badges/coverage.svg)](https://codeclimate.com/github/mhmdshorafa/ammblog/coverage)
+[![Issue Count](https://codeclimate.com/github/mhmdshorafa/ammblog/badges/issue_count.svg)](https://codeclimate.com/github/mhmdshorafa/ammblog)
+>>>>>>> 2c9a6157179f4ad4153a24eb40f4e0de61feba8b
