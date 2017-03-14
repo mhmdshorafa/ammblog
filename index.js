@@ -2,6 +2,15 @@ const Hapi = require('hapi');
 const server = new Hapi.Server();
 
 server.connection({host:'localhost', port: 8080 });
+
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: (request, reply) => {
+
+ reply("Hello");
+  }
+});
 server.route({
   method: 'POST',
   path: '/subscribe',
