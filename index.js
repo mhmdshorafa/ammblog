@@ -1,5 +1,6 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+const conncrea = require('./app/dbutils/client.js');
 
 server.connection({port:process.env.PORT||8080 });
 
@@ -24,8 +25,11 @@ server.route({
         }
   }
 });
-
-server.start(()=>{console.log('listento port');});
-
+if (!module.parent) {
+server.start(error => {
+  console.log(error);
+  process.exit(1);
+});
+}
 
 module.exports = server;
