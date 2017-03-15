@@ -34,7 +34,7 @@ server.register(require('vision', 'inert'), (err) => {
             });
         }
     });
-<<<<<<< HEAD
+
     server.route({
         method: 'GET',
         path: '/admin',
@@ -46,9 +46,7 @@ server.register(require('vision', 'inert'), (err) => {
             });
         }
     });
-=======
 
->>>>>>> 040c8a7cb67b73123d4fdea992b8738908448989
 
 });
 
@@ -59,4 +57,3 @@ if (!module.parent) {
         console.log("server running at localhost:8080");
     });
 }
-
