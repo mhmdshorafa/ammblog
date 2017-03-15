@@ -1,156 +1,156 @@
 * {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-  background-color: #ECF0F1;
-  font-family: 'Roboto', sans-serif;
+    background-color: #ECF0F1;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav {
-  background-color: #2C3E50;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
+    background-color: #2C3E50;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
 }
 
 .nav ul {
-  list-style-type: none;
-  width: 100%;
+    list-style-type: none;
+    width: 100%;
 }
 
 .nav li {
-  float: left;
-  padding: 20px 0px;
-  background-color: #E74C3C;
+    float: left;
+    padding: 20px 0px;
+    background-color: #E74C3C;
 }
 
 .nav a {
-  padding: 21px 40px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+    padding: 21px 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 .nav a:hover {
-  color: #E74C3C;
-  background-color: #ECF0F1;
+    color: #E74C3C;
+    background-color: #ECF0F1;
 }
 
 header {
-  background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /*background: -webkit-linear-gradient(top, rgba(44, 62, 80, 1) 50%, rgba(236, 240, 241, 1) 60%);*/
-  height: 600px;
-  text-align: center;
+    background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background: -webkit-linear-gradient(top, rgba(44, 62, 80, 1) 50%, rgba(236, 240, 241, 1) 60%);*/
+    height: 600px;
+    text-align: center;
 }
 
 header h1 {
-  color: white;
-  font-size: 72px;
-  font-weight: bold;
-  padding: 150px 0px;
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+    padding: 150px 0px;
 }
 
 header button {
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 18px 0px;
-  font-weight: bold;
-  background-color: #E74C3C;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 18px 0px;
+    font-weight: bold;
+    background-color: #E74C3C;
 }
 
 button a {
-  color: white;
-  padding: 18px 24px;
-  text-decoration: none;
+    color: white;
+    padding: 18px 24px;
+    text-decoration: none;
 }
 
 .main {
-  height: auto;
-  padding: 60px 20px 20px 20px;
-  display: flex;
-  align-items: flex-start;
+    height: auto;
+    padding: 60px 20px 20px 20px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .articles {
-  width: 60%;
-  height: auto;
+    width: 60%;
+    height: auto;
 }
 
 .article {
-  margin-bottom: 20px;
-  margin-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.articles div:first-child{
-  margin-top: 0px;
+.articles div:first-child {
+    margin-top: 0px;
 }
 
 .article img {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .article hr {
-  width: 30%;
-  margin: 0px auto;
+    width: 30%;
+    margin: 0px auto;
 }
 
 .article h2 {
-  padding: 0px 0px 10px 0px;
-  text-transform: uppercase;
-  text-align: center;
+    padding: 0px 0px 10px 0px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .article p {
-  text-align: left;
-  margin: 0px 0px 0px 10px;
-  font-size: 18px;
-  padding: 20px 0px;
+    text-align: left;
+    margin: 0px 0px 0px 10px;
+    font-size: 18px;
+    padding: 20px 0px;
 }
 
 .article a {
-  text-decoration: none;
-  text-align: left;
-  color: #E74C3C;
-  margin: 0px 0px 10px 10px;
+    text-decoration: none;
+    text-align: left;
+    color: #E74C3C;
+    margin: 0px 0px 10px 10px;
 }
 
 .aside {
-  word-spacing: 30%;
-  margin: 0px 0px 0px 120px;
-  padding: 10px;
-  text-align: center;
-  background-color: #FFF;
-  border-top: 15px solid #2C3E50;
+    word-spacing: 30%;
+    margin: 0px 0px 0px 120px;
+    padding: 10px;
+    text-align: center;
+    background-color: #FFF;
+    border-top: 15px solid #2C3E50;
 }
 
 .aside img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  padding-bottom: 20px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    padding-bottom: 20px;
 }
 
 .aside h3 {
-  font-weight: bold;
-  padding-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
 }
 
 footer {
-  height: auto;
-  background-color: #2C3E50;
-  color: white;
-  text-align: center;
-  font-weight: bold;
+    height: auto;
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    font-weight: bold;
 }
 
 footer p {
-  padding: 10px 0px;
-  font-size: 24px;
+    padding: 10px 0px;
+    font-size: 24px;
 }

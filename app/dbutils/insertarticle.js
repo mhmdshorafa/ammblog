@@ -1,14 +1,15 @@
-module.exports = function insertuser(user, cb) {
+var cl = require('./client.js');
+module.exports = function insertarticle(user, cb) {
+    console.log(user);
     var sqlStr = Object.keys(user).map(key => user[key]).map(elem => `'${elem}'`).join(',');
     var sqlQuery =
-      `INSERT INTO article (
-      fname,
-      lname,
-      email,
-      gend,
-      mobile,
-      password,
-      dob) VALUES (${sqlStr})`;
+        `INSERT INTO article (
+      title,
+      img,
+      time,
+      text,
+      likes,
+      doa) VALUES (${sqlStr})`;
     console.log(sqlQuery);
     var insertrw = cl.client.query(sqlQuery, function(err) {
         if (err) {
