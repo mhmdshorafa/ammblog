@@ -1,9 +1,9 @@
 var cl = require('./client.js');
-module.exports = function insertarticle(user,cb) {
-  console.log(user);
+module.exports = function insertarticle(user, cb) {
+    console.log(user);
     var sqlStr = Object.keys(user).map(key => user[key]).map(elem => `'${elem}'`).join(',');
     var sqlQuery =
-      `INSERT INTO article (
+        `INSERT INTO article (
       title,
       img,
       time,

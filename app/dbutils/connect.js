@@ -21,7 +21,7 @@ function createtable(client, cb) {
     doa date)`, function(err) {
         if (err) throw err;
     });
-  }
+}
 
 module.exports = {
     createclient: createclient,
