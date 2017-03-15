@@ -1,12 +1,15 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+
 const get = require('./app/getdata/center.js');
 const articles = require('./app/dbutils/selectarticles.js');
 const conncrea = require('./app/dbutils/client.js');
 
 server.connection({
     port: process.env.PORT || 8080
+
 });
+
 
 
 server.register(require('vision', 'inert'), (err) => {
@@ -32,19 +35,7 @@ server.register(require('vision', 'inert'), (err) => {
             });
         }
     });
-    server.route({
-        method: 'POST',
-        path: '/subscribe',
-        handler: (request, reply) => {
 
-            if (!request.payload.email) {
-                return reply({
-                    result: 'failure',
-                    message: 'Email address is required.'
-                }).code(400);
-            }
-        }
-    });
 
 
 });
@@ -57,4 +48,3 @@ if (!module.parent) {
     });
 }
 
-module.exports = server;
