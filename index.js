@@ -14,7 +14,7 @@ server.connection({
 
 
 
-server.register(require('vision', 'inert'), (err) => {
+server.register([require('vision'), require('inert')], (err) => {
 
     server.views({
         engines: {
@@ -90,7 +90,15 @@ server.register(require('vision', 'inert'), (err) => {
 
         }
     });
-
+    server.route({
+        method: 'GET',
+        path: '/template/style/{file*}',
+        handler: {
+            directory: {
+              path: 'template/style'
+            }
+        }
+    })
 });
 
 
