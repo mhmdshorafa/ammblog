@@ -1,7 +1,7 @@
 module.exports = function insertuser(user, cb) {
     var sqlStr = Object.keys(user).map(key => user[key]).map(elem => `'${elem}'`).join(',');
     var sqlQuery =
-      `INSERT INTO usersdetails (
+      `INSERT INTO article (
       fname,
       lname,
       email,

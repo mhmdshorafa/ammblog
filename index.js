@@ -28,7 +28,6 @@ server.register(require('vision', 'inert'), (err) => {
         path: '/',
         handler: function(request, reply) {
             articles((err, inform) => {
-                console.log(inform);
                 reply.view('index', {
                     p: inform
                 });
@@ -36,6 +35,17 @@ server.register(require('vision', 'inert'), (err) => {
         }
     });
 
+    server.route({
+        method: 'GET',
+        path: '/admin',
+        handler: function(request, reply) {
+            articles((err, inform) => {
+                reply.view('admin', {
+                    p: inform
+                });
+            });
+        }
+    });
 
 
 });
@@ -47,4 +57,3 @@ if (!module.parent) {
         console.log("server running at localhost:8080");
     });
 }
-
