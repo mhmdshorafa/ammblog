@@ -25,7 +25,6 @@ server.register(require('vision', 'inert'), (err) => {
         path: '/',
         handler: function(request, reply) {
             articles((err, inform) => {
-                console.log(inform);
                 reply.view('index', {
                     p: inform
                 });
@@ -33,19 +32,16 @@ server.register(require('vision', 'inert'), (err) => {
         }
     });
     server.route({
-        method: 'POST',
-        path: '/subscribe',
-        handler: (request, reply) => {
-
-            if (!request.payload.email) {
-                return reply({
-                    result: 'failure',
-                    message: 'Email address is required.'
-                }).code(400);
-            }
+        method: 'GET',
+        path: '/admin',
+        handler: function(request, reply) {
+            articles((err, inform) => {
+                reply.view('admin', {
+                    p: inform
+                });
+            });
         }
     });
-
 
 });
 
