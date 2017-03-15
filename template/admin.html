@@ -15,11 +15,12 @@
             <button onclick="addarticle()"><i class="material-icons">note_add</i></button> {{#each p }}
             <div class="article">
                 <h2>{{this.id}}{{this.title}}</h2>
+                <h1>{{this.text}}</h1>
                 <p>{{this.time}}</p>
                 </ br>
                 <p>{{this.doa}}</p>
-                <button id={ {this.id}} value={ {this.id}} onclick="deletearticle(this.id)"><i class="material-icons">delete</i></button>
-                <button><i class="material-icons">update</i></button>
+                <button id={{this.id}} value={{this.id}} onclick="deletearticle(this.id)"><i class="material-icons">delete</i></button>
+                <button id={{this.id}} value={{this.id}} onclick="editarticle(this.id)"><i class="material-icons">update</i></button>
                 <hr>
             </div>
             {{/each}}
@@ -40,5 +41,9 @@
 
     function deletearticle(id) {
         window.location = `/deletearticle/${id}`;
+    }
+    function editarticle(id) {
+      console.log(id);
+        window.location = `/editarticle/${id}`;
     }
 </script>
