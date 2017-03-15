@@ -3,9 +3,7 @@ var connect = require('./connect.js')
 var config = require('./config.js')
 
 var client = connect.createclient(config);
-connect.createtable(client, (err) => {
-    if (err) throw err;
-});
+connect.createtables(client,function (err, data) {});
 
 module.exports = {
     client: client
