@@ -12,13 +12,13 @@
 <body>
     <div class="main" id="main">
         <section class="articles">
-            <button><i class="material-icons">note_add</i></button> {{#each p }}
+            <button onclick="addarticle()"><i class="material-icons">note_add</i></button> {{#each p }}
             <div class="article">
-                <h2>{{this.title}}</h2>
+                <h2>{{this.id}}{{this.title}}</h2>
                 <p>{{this.time}}</p>
                 </ br>
                 <p>{{this.doa}}</p>
-                <button><i class="material-icons">delete</i></button>
+                <button id={ {this.id}} value={ {this.id}} onclick="deletearticle(this.id)"><i class="material-icons">delete</i></button>
                 <button><i class="material-icons">update</i></button>
                 <hr>
             </div>
@@ -26,9 +26,19 @@
         </section>
     </div>
     </footer>
-      <p>Created By AMM &copy; 2017</p>
+    <p>Created By AMM &copy; 2017</p>
     <footer>
 </body>
 
 
 </html>
+
+<script>
+    function addarticle(id) {
+        window.location = "/addarticle";
+    }
+
+    function deletearticle(id) {
+        window.location = `/deletearticle/${id}`;
+    }
+</script>

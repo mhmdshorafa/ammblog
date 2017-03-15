@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
-  </head>
+</head>
 
-  <body>
+<body>
     <nav>
-      <div class="nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li style="float:right;"><a href="#">Contact Me</a></li>
-        </ul>
-      </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li style="float:right;"><a href="#">Contact Me</a></li>
+            </ul>
+        </div>
     </nav>
     <header>
-      <h1>Welcome :)</h1>
-      <button type="button" name="button"><a href="#main">Read More</a></button>
+        <h1>Welcome :)</h1>
+        <button type="button" name="button"><a href="#main">Read More</a></button>
     </header>
     <div class="main" id="main">
-      <section class="articles">
-        <div class="article">
-          <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
-          <h2>article title</h2>
-          <hr>
-          <p>{{#each p }}
-       <li>{{this.id}}, {{this.title}}, {{this.img}},{{this.time}},{{this.likes}},{{this.text}},{{this.doa}}</li>
-          {{/each}}</p>
-          <a href="#">Read More</a>
-        </div>
-        <hr>
-        {{#each p }}
-        <div class="article">
-          <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
-          <h2>{{this.title}}</h2>
-          <hr>
-          <p>{{this.text}}</p>
-          <a href="#">Read More</a><p>{{this.time}}</p></ br>
-          <p>{{this.doa}}</p>
-        </div>
-        {{/each}}
-      </section>
-      <aside class="aside">
-        <img src="./images/admin.png" alt="Admin">
-        <h3>Admin Name</h3>
-        <p>BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
-      </aside>
+        <section class="articles">
+            <div class="article">
+                <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
+                <h2>article title</h2>
+                <hr>
+                <p>{{#each p }}
+                    <li>{{this.id}}, {{this.title}}, {{this.img}},{{this.time}},{{this.likes}},{{this.text}},{{this.doa}}</li>
+                    {{/each}}</p>
+                <a href="#">Read More</a>
+            </div>
+            <hr> {{#each p }}
+            <div class="article">
+                <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
+                <h2>{{this.title}}</h2>
+                <hr>
+                <p>{{this.text}}</p>
+                <a href="#">Read More</a>
+                <p>{{this.time}}</p>
+                </ br>
+                <p>{{this.doa}}</p>
+            </div>
+            {{/each}}
+        </section>
+        <aside class="aside">
+            <img src="./images/admin.png" alt="Admin">
+            <h3>Admin Name</h3>
+            <p>BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
+        </aside>
     </div>
     <footer>
-      <p>Created By AMM &copy; 2017</p>
+        <p>Created By AMM &copy; 2017</p>
     </footer>
-  </body>
+</body>
 
 </html>
