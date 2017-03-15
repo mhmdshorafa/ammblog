@@ -4,6 +4,7 @@ const server = new Hapi.Server();
 const getarticles = require('./app/dbutils/selectarticles.js');
 const insertarticle = require('./app/dbutils/insertarticle.js');
 const deletearticle = require('./app/dbutils/deletearticle.js');
+const updatearticle = require('./app/dbutils/updatearticle.js');
 console.log(insertarticle);
 const conncrea = require('./app/dbutils/client.js');
 
@@ -29,7 +30,8 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-            getarticles((err, inform) => {
+          var id = -1;
+            getarticles(id ,(err, inform) => {
                 reply.view('index', {
                     p: inform
                 });
@@ -41,7 +43,8 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'GET',
         path: '/admin',
         handler: function(request, reply) {
-            getarticles((err, inform) => {
+          var id = -1;
+            getarticles(id ,(err, inform) => {
                 reply.view('admin', {
                     p: inform
                 });
@@ -87,6 +90,37 @@ server.register([require('vision'), require('inert')], (err) => {
             deletearticle(id, (err, inform) => {
                 reply().redirect('/admin');
             });
+
+        }
+    });
+    server.route({
+        method: 'GET',
+        path: '/editarticle/{id}',
+        handler: function(request, reply) {
+            var id = encodeURIComponent(request.params.id);
+            console.log(id);
+            getarticles(id, (err, inform) => {
+              console.log(inform[0]);
+            reply.view('editarticle',inform[0]);
+            });
+
+        }
+    });
+
+    server.route({
+        method: 'POST',
+        path: '/updatearticle/{id}',
+        handler: function(request, reply) {
+          var arr = [];
+            var id = encodeURIComponent(request.params.id);
+            arr.push(request.payload.arttitle);
+            arr.push(request.payload.artimg);
+            arr.push(request.payload.content);
+            arr.push(id);
+            updatearticle(arr, (err, inform) => {
+            reply().redirect('/admin');
+            });
+
 
         }
     });
