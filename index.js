@@ -30,8 +30,10 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
+
           var id = -1;
             getarticles(id ,(err, inform) => {
+
                 reply.view('index', {
                     p: inform
                 });
@@ -76,17 +78,16 @@ server.register([require('vision'), require('inert')], (err) => {
             //console.log(arr);
             insertarticle(arr, (err, inform) => {
                 reply().redirect('/admin');
-
-            });
-
+            })
         }
     });
+
     server.route({
         method: 'GET',
         path: '/deletearticle/{id}',
         handler: function(request, reply) {
             var id = encodeURIComponent(request.params.id);
-            console.log(id);
+            console.log('id', id);
             deletearticle(id, (err, inform) => {
                 reply().redirect('/admin');
             });
@@ -130,6 +131,15 @@ server.register([require('vision'), require('inert')], (err) => {
         handler: {
             directory: {
               path: 'template/style'
+            }
+        }
+    })
+    server.route({
+        method: 'GET',
+        path: '/template/images/{file*}',
+        handler: {
+            directory: {
+              path: 'template/images'
             }
         }
     })
