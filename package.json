@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "codeclimate-test-reporter": "^0.4.1",
+    "handlebars": "^4.0.6",
     "hapi": "^16.1.0",
-    "shot": "^3.4.0",
     "istanbul": "^0.4.5",
-    "tape": "^4.6.3"
+    "shot": "^3.4.0",
+    "tape": "^4.6.3",
+    "vision": "^4.1.1"
   },
   "devDependencies": {},
   "scripts": {
