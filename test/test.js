@@ -29,6 +29,7 @@ test('endpoint test | GET/main | Bad Request', t => {
 });
 test('endpoint test | GET/articles | return html page with articles', t => {
 
+
 });
 
 test('controlpanel test | Post/controller/addArticle | add new article to db', t => {
