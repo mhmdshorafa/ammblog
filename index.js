@@ -1,12 +1,15 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+
 const get = require('./app/getdata/center.js');
 const articles = require('./app/dbutils/selectarticles.js');
 const conncrea = require('./app/dbutils/client.js');
 
 server.connection({
     port: process.env.PORT || 8080
+
 });
+
 
 
 server.register(require('vision', 'inert'), (err) => {
@@ -31,6 +34,7 @@ server.register(require('vision', 'inert'), (err) => {
             });
         }
     });
+<<<<<<< HEAD
     server.route({
         method: 'GET',
         path: '/admin',
@@ -42,6 +46,9 @@ server.register(require('vision', 'inert'), (err) => {
             });
         }
     });
+=======
+
+>>>>>>> 040c8a7cb67b73123d4fdea992b8738908448989
 
 });
 
@@ -53,4 +60,3 @@ if (!module.parent) {
     });
 }
 
-module.exports = server;
