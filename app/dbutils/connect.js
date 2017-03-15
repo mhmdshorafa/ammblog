@@ -20,7 +20,10 @@ function createtable(client, cb) {
     likes integer,
     doa date)`, function(err) {
         if (err) throw err;
+        client.end();
+
     });
+    return true;
   }
 
 module.exports = {

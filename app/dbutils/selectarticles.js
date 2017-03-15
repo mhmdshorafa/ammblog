@@ -10,16 +10,3 @@ module.exports = function selectarticle(cb) {
     });
 
 }
-
-
-// var sqlQuery = `SELECT id,
-// fname,
-// lname,
-// email,
-// gend,
-// mobile,
-// password,
-// dob
-// FROM usersdetails
-// WHERE email = '${user[0]}'
-// AND password = '${user[1]}'`;

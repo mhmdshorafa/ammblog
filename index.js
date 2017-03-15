@@ -25,10 +25,9 @@ server.register(require('vision', 'inert'), (err) => {
 
     server.route({
         method: 'GET',
-        path: '/',
+        path: '/blog',
         handler: function(request, reply) {
             articles((err, inform) => {
-                console.log(inform);
                 reply.view('index', {
                     p: inform
                 });
@@ -48,3 +47,4 @@ if (!module.parent) {
     });
 }
 
+module.exports = server;
