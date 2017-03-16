@@ -4,9 +4,9 @@
 
 Blog site with CMS that allow you to Add, Delete and update articles.
 
-During project plan we used Hapijs framework for Nodejs, tape for TDD .
-
 ## [Link](https://amm-blog.herokuapp.com/)
+
+During project plan we used Hapijs framework for Nodejs, tape for TDD .
 
 To run the project type
 
