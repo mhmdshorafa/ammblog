@@ -16,14 +16,17 @@ function createtables(client, cb) {
     text varchar(8000),
     category varchar(55),
     likes integer,
-    doa date)`, function(err) {
+    doa date)`, function(err,result) {
         if (err) throw err;
+        result = true;
+        cb(err,result);
     });
-}
 
+}
 
 module.exports = {
     createclient: createclient,
     createtables: createtables,
+
 
 };

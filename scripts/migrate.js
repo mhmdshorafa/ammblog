@@ -12,4 +12,6 @@ var config = {
 
 var client = connect.createclient(config);
 
-connect.createtables(client, function(err, data) {});
+connect.createtables(client, function(err,res) {
+  console.log('migrate',res);
+});

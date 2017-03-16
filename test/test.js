@@ -72,4 +72,8 @@ test('endpoint test | Post/controller/deleteArticle | return html page with arti
     server.stop(t.end);
 });
 
-test.onFinish(() => process.exit(0));
+test.onFinish(() => {
+client.end();
+process.exit(0)
+}
+);
