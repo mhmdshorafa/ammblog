@@ -10,10 +10,7 @@ const conncrea = require('./app/dbutils/client.js');
 
 server.connection({
     port: process.env.PORT || 8080
-
 });
-
-
 
 server.register([require('vision'), require('inert')], (err) => {
 
@@ -31,8 +28,8 @@ server.register([require('vision'), require('inert')], (err) => {
         path: '/',
         handler: function(request, reply) {
 
-          var id = -1;
-            getarticles(id ,(err, inform) => {
+            var id = -1;
+            getarticles(id, (err, inform) => {
 
                 reply.view('index', {
                     p: inform
@@ -45,8 +42,8 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'GET',
         path: '/admin',
         handler: function(request, reply) {
-          var id = -1;
-            getarticles(id ,(err, inform) => {
+            var id = -1;
+            getarticles(id, (err, inform) => {
                 reply.view('admin', {
                     p: inform
                 });
@@ -75,7 +72,6 @@ server.register([require('vision'), require('inert')], (err) => {
             arr.push(request.payload.content);
             arr.push(0);
             arr.push(date);
-            //console.log(arr);
             insertarticle(arr, (err, inform) => {
                 reply().redirect('/admin');
             })
@@ -101,8 +97,8 @@ server.register([require('vision'), require('inert')], (err) => {
             var id = encodeURIComponent(request.params.id);
             console.log(id);
             getarticles(id, (err, inform) => {
-              console.log(inform[0]);
-            reply.view('editarticle',inform[0]);
+                console.log(inform[0]);
+                reply.view('editarticle', inform[0]);
             });
 
         }
@@ -112,14 +108,14 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'POST',
         path: '/updatearticle/{id}',
         handler: function(request, reply) {
-          var arr = [];
+            var arr = [];
             var id = encodeURIComponent(request.params.id);
             arr.push(request.payload.arttitle);
             arr.push(request.payload.artimg);
             arr.push(request.payload.content);
             arr.push(id);
             updatearticle(arr, (err, inform) => {
-            reply().redirect('/admin');
+                reply().redirect('/admin');
             });
 
 
@@ -130,25 +126,24 @@ server.register([require('vision'), require('inert')], (err) => {
         path: '/template/style/{file*}',
         handler: {
             directory: {
-              path: 'template/style'
+                path: 'template/style'
             }
         }
-    })
+    });
     server.route({
         method: 'GET',
         path: '/template/images/{file*}',
         handler: {
             directory: {
-              path: 'template/images'
+                path: 'template/images'
             }
         }
     })
 });
-
-
 
 if (!module.parent) {
     server.start(function() {
         console.log("server running at localhost:8080");
     });
 }
+module.exports = server;
