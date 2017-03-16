@@ -23,8 +23,7 @@ server.register([require('vision'), require('inert')], (err) => {
             html: require('handlebars')
         },
         relativeTo: __dirname,
-        path: 'template',
-        helpersPath: 'helpers'
+        path: 'template'
     });
 
     server.route({
