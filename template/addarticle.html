@@ -3,29 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Admin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./template/style/style.css">
 </head>
 
 <body>
-    <form method="POST" action="/insertarticle">
-        <label>Article image</label>
-        <input type="file" name="artimg">
-        <label>Article title</label>
-        <input type="text" name="arttitle">
-
-        <label>Content</label>
-        <textarea rows="8" cols="80" name="content"></textarea>
-        <input name="category" list="category">
-          <datalist id="category">
-            <option value="sports">
-            <option value="science">
-            <option value="art">
-            <option value="history">
-          </datalist>
-        <button type="submit">Add Article</button>
-        <label id="error"></label>
-    </form>
-
+    <nav>
+        <div class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li style="float:right;"><a href="/admin">admin</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="add-main">
+        <form method="POST" action="/insertarticle">
+            <label>Articles categories</label>
+            <div class="items">
+                <input list="category" name="category">
+                <datalist id="category">
+                  <option value="sports">
+                  <option value="science">
+                  <option value="art">
+                  <option value="history">
+              </datalist>
+            </div>
+            <label for="arttitle">Article title</label>
+            <div class="items">
+                <input type="text" name="arttitle" id="arttitle">
+            </div>
+            <label for="content">Content</label>
+            <div class="items">
+                <textarea rows="15" cols="80" name="content" id="content"></textarea>
+            </div>
+            <label for="artimg">Article image</label>
+            <div class="items">
+                <input type="file" name="artimg" id="artimg">
+            </div>
+            <button type="submit">Add Article</button>
+            <label id="error"></label>
+        </form>
+    </div>
+    <footer>
+        <p>Created By AMM &copy; 2017</p>
+    </footer>
 </body>
 
 </html>
