@@ -1,6 +1,6 @@
 var moment = require('moment');
 module.exports= (request)=>{
-
+  console.log('PAYLOAD',request.payload);
   var arr = [];
   var now = moment()
   var date = now.format('YYYY-MM-DD');
