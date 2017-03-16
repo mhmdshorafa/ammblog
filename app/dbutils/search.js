@@ -1,14 +1,11 @@
 var cl = require('./client.js');
-module.exports = function selectarticle(id , cb) {
+module.exports = function selectarticle(val , cb) {
   console.log(cb);
-   var sqlQuery ;
-   if(id == -1){
-     sqlQuery = `SELECT *
-     FROM article`;
-   } else {
-     sqlQuery = `SELECT id,title,img,text,category
-     FROM article where id=${id}`;
-   }
+
+
+    var sqlQuery = `SELECT id,title,img,text,category
+     FROM article where category='${val}'`;
+
    console.log(sqlQuery);
 
     var selectuse = cl.client.query(sqlQuery, function(err, result) {

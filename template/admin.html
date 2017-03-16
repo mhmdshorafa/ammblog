@@ -15,7 +15,8 @@
             <button onclick="addarticle()"><i class="material-icons">note_add</i></button> {{#each p }}
             <div class="article">
                 <h2>{{this.id}}{{this.title}}</h2>
-                <h1>{{this.text}}</h1>
+                <p>{{this.text}}</p>
+                <p>{{this.category}}</p>
                 <p>{{this.time}}</p>
                 </ br>
                 <p>{{this.doa}}</p>

@@ -24,25 +24,18 @@
     </header>
     <div class="main" id="main">
         <section class="articles">
-            <div class="article">
-                <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
-                <h2>article title</h2>
-                <hr>
-                <p>{{#each p }}
-                    <li>{{this.id}}, {{this.title}}, {{this.img}},{{this.time}},{{this.likes}},{{this.text}},{{this.doa}}</li>
-                    {{/each}}</p>
-                <a href="#">Read More</a>
-            </div>
+
             <hr> {{#each p }}
             <div class="article">
                 <img src="http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg" alt="article image">
                 <h2>{{this.title}}</h2>
                 <hr>
                 <p>{{this.text}}</p>
-                <a href="#">Read More</a>
+                <p>{{this.category}}</p>
+                <label id="{{this.id}}" onclick="readmore(this.id)">Read More</label>
                 <p>{{this.time}}</p>
                 </ br>
-                <p>{{this.doa}}</p>
+                <p>{{this.doa}}</p><br>
             </div>
             {{/each}}
         </section>
@@ -52,9 +45,30 @@
             <p>BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
         </aside>
     </div>
+
+    <input id="category" name="category" list="category">
+      <datalist id="category">
+        <option value="sports">
+        <option value="science">
+        <option value="art">
+        <option value="history">
+      </datalist>
+    <button onclick="search()">Search</button>
+
+<br><br><br>
     <footer>
         <p>Created By AMM &copy; 2017</p>
     </footer>
 </body>
 
 </html>
+<script>
+function readmore(id) {
+window.location = `/readmore/${id}`;
+}
+function search() {
+  var val = document.getElementById('category').value;
+  console.log(val);
+  window.location = `/search/${val}`;
+}
+</script>

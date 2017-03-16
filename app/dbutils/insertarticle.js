@@ -8,6 +8,7 @@ module.exports = function insertarticle(user, cb) {
       img,
       time,
       text,
+      category,
       likes,
       doa) VALUES (${sqlStr})`;
     console.log(sqlQuery);

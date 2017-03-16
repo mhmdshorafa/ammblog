@@ -17,6 +17,7 @@ function createtable(client, cb) {
     img varchar(255),
     time varchar(32),
     text varchar(8000),
+    category varchar(55),
     likes integer,
     doa date)`, function(err) {
         if (err) throw err;

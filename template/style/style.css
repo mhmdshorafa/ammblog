@@ -112,6 +112,10 @@ button a {
     margin: 0px 0px 0px 10px;
     font-size: 18px;
     padding: 20px 0px;
+    width: 1500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .article a {

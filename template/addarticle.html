@@ -12,8 +12,16 @@
         <input type="file" name="artimg">
         <label>Article title</label>
         <input type="text" name="arttitle">
+
         <label>Content</label>
         <textarea rows="8" cols="80" name="content"></textarea>
+        <input name="category" list="category">
+          <datalist id="category">
+            <option value="sports">
+            <option value="science">
+            <option value="art">
+            <option value="history">
+          </datalist>
         <button type="submit">Add Article</button>
         <label id="error"></label>
     </form>
