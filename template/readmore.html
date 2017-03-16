@@ -1,30 +1,166 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./template/style/style.css">
+    <style media="screen">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        background-color: #ECF0F1;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .nav {
+        background-color: #2C3E50;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        width: 100%;
+      }
+
+      .nav li {
+        float: left;
+        padding: 20px 0px;
+        background-color: #E74C3C;
+      }
+
+      .nav a {
+        padding: 21px 40px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .nav a:hover {
+        color: #E74C3C;
+        background-color: #ECF0F1;
+      }
+
+      header {
+        background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 550px;
+        text-align: center;
+      }
+
+      header h1 {
+        color: white;
+        font-size: 72px;
+        font-weight: bold;
+        padding: 150px 0px;
+      }
+
+      header button {
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 18px 0px;
+        font-weight: bold;
+        background-color: #E74C3C;
+      }
+
+      button a {
+        color: white;
+        padding: 18px 24px;
+        text-decoration: none;
+      }
+
+      .main {
+        height: auto;
+        padding: 60px 20px 20px 20px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .articles {
+        width: 60%;
+        height: auto;
+      }
+
+      .article {
+        margin: 20px auto;
+        width: 80%;
+        text-align: center;
+      }
+
+      .articles div:first-child {
+        margin-top: 0px;
+      }
+
+      .article img {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      .article hr {
+        width: 30%;
+        margin: 0px auto;
+      }
+
+      .article h2 {
+        padding: 0px 0px 10px 0px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .article p {
+        text-align: left;
+        margin: 0px 0px 0px 10px;
+        font-size: 18px;
+        padding: 20px 0px;
+      }
+
+      .article a {
+        text-decoration: none;
+        text-align: left;
+        color: #E74C3C;
+        margin: 0px 0px 10px 10px;
+      }
+
+      footer {
+        height: auto;
+        width: 100%;
+        background-color: #2C3E50;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 0px;
+      }
+
+      footer p {
+        padding: 10px 0px;
+        font-size: 24px;
+      }
+    </style>
   </head>
+
   <body>
     <nav>
-        <div class="nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li style="float:right;"><a href="#">Contact Me</a></li>
-            </ul>
-        </div>
+      <div class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li style="float:right;"><a href="/admin">admin</a></li>
+        </ul>
+      </div>
     </nav>
-
-  <div class="article">
-      <h2>{{title}}</h2>
-      <h1>{{text}}</h1>
-      <p>{{time}}</p>
-      </ br>
-      <p>{{doa}}</p>
-      <hr>
-  </div>
-
+    <div class="article">
+      <img src="../template/images/{{img}}" alt="article image">
+      <h1>{{title}}</h1>
+      <p>{{text}}</p>
+    </div>
   </body>
+
 </html>
