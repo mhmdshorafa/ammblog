@@ -14,10 +14,7 @@ const editvalues = require('./app/utils/editvalues.js');
 
 server.connection({
     port: process.env.PORT || 8080
-
 });
-
-
 
 server.register([require('vision'), require('inert')], (err) => {
 
@@ -71,8 +68,10 @@ server.register([require('vision'), require('inert')], (err) => {
             insertarticle(arr, (err, inform) => {
                 reply().redirect('/admin');
             });
+
         }
     });
+
     server.route({
         method: 'GET',
         path: '/deletearticle/{id}',
@@ -134,15 +133,24 @@ server.register([require('vision'), require('inert')], (err) => {
         handler: {
             directory: {
                 path: 'template/style'
+
+            }
+        }
+    });
+    server.route({
+        method: 'GET',
+        path: '/template/images/{file*}',
+        handler: {
+            directory: {
+                path: 'template/images'
             }
         }
     })
 });
-
-
 
 if (!module.parent) {
     server.start(function() {
         console.log("server running at localhost:8080");
     });
 }
+module.exports = server;

@@ -6,7 +6,7 @@ module.exports = function selectarticle(id , cb) {
      sqlQuery = `SELECT *
      FROM article`;
    } else {
-     sqlQuery = `SELECT id,title,img,text,category
+     sqlQuery = `SELECT id,title,img,text
      FROM article where id=${id}`;
    }
    console.log(sqlQuery);
