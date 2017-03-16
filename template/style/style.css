@@ -1,162 +1,162 @@
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-    background-color: #ECF0F1;
-    font-family: 'Roboto', sans-serif;
+  background-color: #ECF0F1;
+  font-family: 'Roboto', sans-serif;
 }
 
 .nav {
-    background-color: #2C3E50;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
+  background-color: #2C3E50;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
 }
 
 .nav ul {
-    list-style-type: none;
-    width: 100%;
+  list-style-type: none;
+  width: 100%;
 }
 
 .nav li {
-    float: left;
-    padding: 20px 0px;
-    background-color: #E74C3C;
+  float: left;
+  padding: 20px 0px;
+  background-color: #E74C3C;
 }
 
 .nav a {
-    padding: 21px 40px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+  padding: 21px 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 .nav a:hover {
-    color: #E74C3C;
-    background-color: #ECF0F1;
+  color: #E74C3C;
+  background-color: #ECF0F1;
 }
 
 header {
-    background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 550px;
-    text-align: center;
+  background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 550px;
+  text-align: center;
 }
 
 header h1 {
-    color: white;
-    font-size: 72px;
-    font-weight: bold;
-    padding: 150px 0px;
+  color: white;
+  font-size: 72px;
+  font-weight: bold;
+  padding: 150px 0px;
 }
 
 header button {
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 18px 0px;
-    font-weight: bold;
-    background-color: #E74C3C;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 18px 0px;
+  font-weight: bold;
+  background-color: #E74C3C;
 }
 
 button a {
-    color: white;
-    padding: 18px 24px;
-    text-decoration: none;
+  color: white;
+  padding: 18px 24px;
+  text-decoration: none;
 }
 
 .main {
-    height: auto;
-    padding: 60px 20px 20px 20px;
-    display: flex;
-    align-items: flex-start;
+  height: auto;
+  padding: 60px 20px 20px 20px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .articles {
-    width: 60%;
-    height: auto;
+  width: 60%;
+  height: auto;
 }
 
 .article {
-    margin-bottom: 20px;
-    margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .articles div:first-child {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .article img {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .article hr {
-    width: 30%;
-    margin: 0px auto;
+  width: 30%;
+  margin: 0px auto;
 }
 
 .article h2 {
-    padding: 0px 0px 10px 0px;
-    text-transform: uppercase;
-    text-align: center;
+  padding: 0px 0px 10px 0px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .article p {
-    text-align: left;
-    margin: 0px 10px 0px 10px;
-    font-size: 18px;
-    padding: 20px 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 900px;
+  text-align: left;
+  margin: 0px 10px 0px 10px;
+  font-size: 18px;
+  padding: 20px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 900px;
 }
 
 .article a {
-    text-decoration: none;
-    text-align: left;
-    color: #E74C3C;
-    margin: 0px 0px 10px 10px;
+  text-decoration: none;
+  text-align: left;
+  color: #E74C3C;
+  margin: 0px 0px 10px 10px;
 }
 
 .aside {
-    word-spacing: 30%;
-    margin: 0px 0px 0px 120px;
-    padding: 10px;
-    text-align: center;
-    background-color: #FFF;
-    border-top: 15px solid #2C3E50;
+  word-spacing: 30%;
+  margin: 0px 0px 0px 120px;
+  padding: 10px;
+  text-align: center;
+  background-color: #FFF;
+  border-top: 15px solid #2C3E50;
 }
 
 .aside img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    padding-bottom: 20px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  padding-bottom: 20px;
 }
 
 .aside h3 {
-    font-weight: bold;
-    padding-bottom: 20px;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
 
 footer {
-    height: auto;
-    width: 100%;
-    background-color: #2C3E50;
-    color: white;
-    text-align: center;
-    font-weight: bold;
+  height: auto;
+  width: 100%;
+  background-color: #2C3E50;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
 footer p {
-    padding: 10px 0px;
-    font-size: 24px;
+  padding: 10px 0px;
+  font-size: 24px;
 }
 
 
@@ -180,35 +180,35 @@ footer p {
 }*/
 
 .add-arrt, .del-arrt, .upd-arrt {
-    padding: 10px 20px 10px 20px;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .add-arrt {
-    background-color: #26A65B;
-    margin: 20px 20px;
+  background-color: #26A65B;
+  margin: 20px 20px;
 }
 
 .del-arrt {
-    background-color: #D91E18;
+  background-color: #D91E18;
 }
 
 .upd-arrt {
-    background-color: #2574A9;
+  background-color: #2574A9;
 }
 
 .art-det {
-    padding: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
 }
 
 .art-det p, h1 {
-    padding: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
 }
 
 .art-det hr {
-    margin: 5px 0px;
+  margin: 5px 0px;
 }
 
 
@@ -218,37 +218,37 @@ footer p {
 /*Add article page*/
 
 .add-main {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 30px 20px 30px 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 30px 20px 30px 20px;
 }
 
 .add-main button {
-    padding: 20px 30px 20px 30px;
-    font-size: 20px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    background-color: #26A65B;
+  padding: 20px 30px 20px 30px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: #26A65B;
 }
 
 #arttitle {
-    border: none;
-    width: 300px;
-    height: 30px;
-    font-size: 20px;
+  border: none;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
 }
 
 .items {
-    width: 100%;
-    margin: 20px 0px;
+  width: 100%;
+  margin: 20px 0px;
 }
 
 #artimg {
-    color: black;
-    border: none;
-    cursor: pointer;
+  color: black;
+  border: none;
+  cursor: pointer;
 }
 
 

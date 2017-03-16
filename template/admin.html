@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Admin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./template/style/style.css">
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li style="float:right;"><a href="/admin">admin</a></li>
-            </ul>
-        </div>
+      <div class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li style="float:right;"><a href="/admin">admin</a></li>
+        </ul>
+      </div>
     </nav>
     <div class="admin" id="main">
-        <!-- <aside class="aside">
+      <!-- <aside class="aside">
         <img src="./template/images/admin.png" alt="Admin">
         <h3>Admin Name</h3>
       </aside> -->
-        <section class="art-list">
-            <button onclick="addarticle()" class="add-arrt"><i class="material-icons">note_add</i></button> {{#each p }}
-            <div class="art-det">
-                <h1>Article title: {{this.title}}</h1>
-                <p>Time created: {{this.time}}</p>
-                <p>Date created: {{this.doa}}</p>
-                <button id={{this.id}} value={{this.id}} onclick="deletearticle(this.id)" class="del-arrt"><i class="material-icons">delete</i></button>
-                <button id={{this.id}} value={{this.id}} onclick="editarticle(this.id)" class="upd-arrt"><i class="material-icons">update</i></button>
-                <hr>
-            </div>
-            {{/each}}
-        </section>
+      <section class="art-list">
+        <button onclick="addarticle()" class="add-arrt"><i class="material-icons">note_add</i></button> {{#each p }}
+        <div class="art-det">
+          <h1>Article title: {{this.title}}</h1>
+          <p>Time created: {{this.time}}</p>
+          <p>Date created: {{this.doa}}</p>
+          <button id={{this.id}} value={{this.id}} onclick="deletearticle(this.id)" class="del-arrt"><i class="material-icons">delete</i></button>
+          <button id={{this.id}} value={{this.id}} onclick="editarticle(this.id)" class="upd-arrt"><i class="material-icons">update</i></button>
+          <hr>
+        </div>
+        {{/each}}
+      </section>
     </div>
     <footer>
-        <p>Created By AMM &copy; 2017</p>
+      <p>Created By AMM &copy; 2017</p>
     </footer>
 
     <script>
-        function addarticle(id) {
-            window.location = "/addarticle";
-        }
+      function addarticle(id) {
+        window.location = "/addarticle";
+      }
 
-        function deletearticle(id) {
-            window.location = `/deletearticle/${id}`;
-        }
+      function deletearticle(id) {
+        window.location = `/deletearticle/${id}`;
+      }
 
-        function editarticle(id) {
-            window.location = `/editarticle/${id}`;
-        }
+      function editarticle(id) {
+        window.location = `/editarticle/${id}`;
+      }
     </script>
-</body>
+  </body>
 
 </html>

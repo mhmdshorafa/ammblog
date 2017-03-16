@@ -2,11 +2,11 @@
 var pg = require('pg');
 var connect = require('../app/dbutils/connect.js')
 var config = {
-    database: 'test',
-    user: 'postgres',
-    password: 'admin',
-    host: 'localhost',
-    port: '5432',
+  database: 'test',
+  user: 'postgres',
+  password: 'admin',
+  host: 'localhost',
+  port: '5432',
 
 }
 

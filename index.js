@@ -13,145 +13,142 @@ const editvalues = require('./app/utils/editvalues.js');
 
 
 server.connection({
-    port: process.env.PORT || 8080
+  port: process.env.PORT || 8080
 });
 
 server.register([require('vision'), require('inert')], (err) => {
 
-    server.views({
-        engines: {
-            html: require('handlebars')
-        },
-        relativeTo: __dirname,
-        path: 'template'
-    });
+  server.views({
+    engines: {
+      html: require('handlebars')
+    },
+    relativeTo: __dirname,
+    path: 'template'
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: function(request, reply) {
-            var id = -1;
-            getarticles(id, (err, inform) => {
-                reply.view('index', {
-                    p: inform
-                });
-            });
-        }
-    });
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(request, reply) {
+      var id = -1;
+      getarticles(id, (err, inform) => {
+        reply.view('index', {
+          p: inform
+        });
+      });
+    }
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/admin',
-        handler: function(request, reply) {
-            var id = -1;
-            getarticles(id, (err, inform) => {
-                reply.view('admin', {
-                    p: inform
-                });
-            });
-        }
-    });
-    server.route({
-        method: 'GET',
-        path: '/addarticle',
-        handler: function(request, reply) {
-            reply.view('addarticle');
-        }
-    });
+  server.route({
+    method: 'GET',
+    path: '/admin',
+    handler: function(request, reply) {
+      var id = -1;
+      getarticles(id, (err, inform) => {
+        reply.view('admin', {
+          p: inform
+        });
+      });
+    }
+  });
+  server.route({
+    method: 'GET',
+    path: '/addarticle',
+    handler: function(request, reply) {
+      reply.view('addarticle');
+    }
+  });
 
-    server.route({
-        method: 'POST',
-        path: '/insertarticle',
-        handler: function(request, reply) {
-            var arr = arrvalues(request);
-            insertarticle(arr, (err, inform) => {
-                console.log(inform);
-            });
-            reply().redirect('/admin');
+  server.route({
+    method: 'POST',
+    path: '/insertarticle',
+    handler: function(request, reply) {
+      var arr = arrvalues(request);
+      insertarticle(arr, (err, inform) => {});
+      reply().redirect('/admin');
 
-        }
-    });
+    }
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/deletearticle/{id}',
-        handler: function(request, reply) {
-            var id = encodeURIComponent(request.params.id);
-            deletearticle(id, (err, inform) => {
-                reply().redirect('/admin');
-            });
-        }
-    });
-    server.route({
-        method: 'GET',
-        path: '/editarticle/{id}',
-        handler: function(request, reply) {
-            var id = encodeURIComponent(request.params.id);
-            getarticles(id, (err, inform) => {
-                reply.view('editarticle', inform[0]);
-            });
-        }
-    });
+  server.route({
+    method: 'GET',
+    path: '/deletearticle/{id}',
+    handler: function(request, reply) {
+      var id = encodeURIComponent(request.params.id);
+      deletearticle(id, (err, inform) => {
+        reply().redirect('/admin');
+      });
+    }
+  });
+  server.route({
+    method: 'GET',
+    path: '/editarticle/{id}',
+    handler: function(request, reply) {
+      var id = encodeURIComponent(request.params.id);
+      getarticles(id, (err, inform) => {
+        reply.view('editarticle', inform[0]);
+      });
+    }
+  });
 
-    server.route({
-        method: 'POST',
-        path: '/updatearticle/{id}',
-        handler: function(request, reply) {
-            var arr = editvalues(request);
-            updatearticle(arr, (err, inform) => {
-                reply().redirect('/admin');
-            });
-        }
-    });
+  server.route({
+    method: 'POST',
+    path: '/updatearticle/{id}',
+    handler: function(request, reply) {
+      var arr = editvalues(request);
+      updatearticle(arr, (err, inform) => {
+        reply().redirect('/admin');
+      });
+    }
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/readmore/{id}',
-        handler: function(request, reply) {
-            var id = encodeURIComponent(request.params.id);
-            getarticles(id, (err, inform) => {
-              console.log(inform[0]);
-                reply.view('readmore', inform[0]);
-            });
-        }
-    });
-    server.route({
-        method: 'GET',
-        path: '/search/{val}',
-        handler: function(request, reply) {
-            var val = encodeURIComponent(request.params.val);
-            search(val, (err, inform) => {
-                reply.view('index',{
-                    p: inform
-                });
-            });
-        }
-    });
+  server.route({
+    method: 'GET',
+    path: '/readmore/{id}',
+    handler: function(request, reply) {
+      var id = encodeURIComponent(request.params.id);
+      getarticles(id, (err, inform) => {
+        reply.view('readmore', inform[0]);
+      });
+    }
+  });
+  server.route({
+    method: 'GET',
+    path: '/search/{val}',
+    handler: function(request, reply) {
+      var val = encodeURIComponent(request.params.val);
+      search(val, (err, inform) => {
+        reply.view('index', {
+          p: inform
+        });
+      });
+    }
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/template/style/{file*}',
-        handler: {
-            directory: {
-                path: 'template/style'
+  server.route({
+    method: 'GET',
+    path: '/template/style/{file*}',
+    handler: {
+      directory: {
+        path: 'template/style'
 
-            }
-        }
-    });
-    server.route({
-        method: 'GET',
-        path: '/template/images/{file*}',
-        handler: {
-            directory: {
-                path: 'template/images'
-            }
-        }
-    })
+      }
+    }
+  });
+  server.route({
+    method: 'GET',
+    path: '/template/images/{file*}',
+    handler: {
+      directory: {
+        path: 'template/images'
+      }
+    }
+  })
 });
 
 if (!module.parent) {
-    server.start(function() {
-        console.log("server running at localhost:8080");
-    });
+  server.start(function() {
+    console.log("server running at localhost:8080");
+  });
 }
 module.exports = server;

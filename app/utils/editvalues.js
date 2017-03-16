@@ -1,5 +1,4 @@
-
-module.exports= (request)=>{
+module.exports = (request) => {
   var arr = [];
   var id = encodeURIComponent(request.params.id);
   arr.push(request.payload.arttitle);

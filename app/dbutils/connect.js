@@ -1,14 +1,14 @@
 var pg = require('pg');
 
 var createclient = (config) => {
-    var client = new pg.Client(config);
-    client.connect();
-    return client;
+  var client = new pg.Client(config);
+  client.connect();
+  return client;
 }
 
 
 function createtables(client, cb) {
-    var usersquery = client.query(`CREATE TABLE IF NOT EXISTS article(
+  var usersquery = client.query(`CREATE TABLE IF NOT EXISTS article(
     id SERIAL PRIMARY KEY,
     title varchar(255),
     img varchar(255),
@@ -17,14 +17,14 @@ function createtables(client, cb) {
     category varchar(55),
     likes integer,
     doa date)`, function(err) {
-      console.log(err);
-        if (err) throw err;
-    });
+    console.log(err);
+    if (err) throw err;
+  });
 }
 
 
 module.exports = {
-    createclient: createclient,
-    createtables: createtables,
+  createclient: createclient,
+  createtables: createtables,
 
 };
