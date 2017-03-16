@@ -1,12 +1,16 @@
 const Hapi = require('hapi');
-var moment = require('moment');
 const server = new Hapi.Server();
+
 const getarticles = require('./app/dbutils/selectarticles.js');
 const insertarticle = require('./app/dbutils/insertarticle.js');
 const deletearticle = require('./app/dbutils/deletearticle.js');
 const updatearticle = require('./app/dbutils/updatearticle.js');
-console.log(insertarticle);
 const conncrea = require('./app/dbutils/client.js');
+const search = require('./app/dbutils/search.js');
+
+const arrvalues = require('./app/utils/arrvalues.js');
+const editvalues = require('./app/utils/editvalues.js');
+
 
 server.connection({
     port: process.env.PORT || 8080
@@ -27,10 +31,8 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-
             var id = -1;
             getarticles(id, (err, inform) => {
-
                 reply.view('index', {
                     p: inform
                 });
@@ -62,19 +64,12 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'POST',
         path: '/insertarticle',
         handler: function(request, reply) {
-            var arr = [];
-            var now = moment()
-            var date = now.format('YYYY-MM-DD');
-            var time = now.format('HH:mm');
-            arr.push(request.payload.arttitle);
-            arr.push(request.payload.artimg);
-            arr.push(time);
-            arr.push(request.payload.content);
-            arr.push(0);
-            arr.push(date);
+            var arr = arrvalues(request);
             insertarticle(arr, (err, inform) => {
-                reply().redirect('/admin');
-            })
+                console.log(inform);
+            });
+            reply().redirect('/admin');
+
         }
     });
 
@@ -83,11 +78,9 @@ server.register([require('vision'), require('inert')], (err) => {
         path: '/deletearticle/{id}',
         handler: function(request, reply) {
             var id = encodeURIComponent(request.params.id);
-            console.log('id', id);
             deletearticle(id, (err, inform) => {
                 reply().redirect('/admin');
             });
-
         }
     });
     server.route({
@@ -95,12 +88,9 @@ server.register([require('vision'), require('inert')], (err) => {
         path: '/editarticle/{id}',
         handler: function(request, reply) {
             var id = encodeURIComponent(request.params.id);
-            console.log(id);
             getarticles(id, (err, inform) => {
-                console.log(inform[0]);
                 reply.view('editarticle', inform[0]);
             });
-
         }
     });
 
@@ -108,25 +98,43 @@ server.register([require('vision'), require('inert')], (err) => {
         method: 'POST',
         path: '/updatearticle/{id}',
         handler: function(request, reply) {
-            var arr = [];
-            var id = encodeURIComponent(request.params.id);
-            arr.push(request.payload.arttitle);
-            arr.push(request.payload.artimg);
-            arr.push(request.payload.content);
-            arr.push(id);
+            var arr = editvalues(request);
             updatearticle(arr, (err, inform) => {
                 reply().redirect('/admin');
             });
-
-
         }
     });
+
+    server.route({
+        method: 'GET',
+        path: '/readmore/{id}',
+        handler: function(request, reply) {
+            var id = encodeURIComponent(request.params.id);
+            getarticles(id, (err, inform) => {
+                reply.view('readmore', inform[0]);
+            });
+        }
+    });
+    server.route({
+        method: 'GET',
+        path: '/search/{val}',
+        handler: function(request, reply) {
+            var val = encodeURIComponent(request.params.val);
+            search(val, (err, inform) => {
+                reply.view('index',{
+                    p: inform
+                });
+            });
+        }
+    });
+
     server.route({
         method: 'GET',
         path: '/template/style/{file*}',
         handler: {
             directory: {
                 path: 'template/style'
+
             }
         }
     });

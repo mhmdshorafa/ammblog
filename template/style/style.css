@@ -42,8 +42,7 @@ header {
     background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    /*background: -webkit-linear-gradient(top, rgba(44, 62, 80, 1) 50%, rgba(236, 240, 241, 1) 60%);*/
-    height: 600px;
+    height: 550px;
     text-align: center;
 }
 
@@ -144,13 +143,111 @@ button a {
 
 footer {
     height: auto;
+    width: 100%;
     background-color: #2C3E50;
     color: white;
     text-align: center;
     font-weight: bold;
+    position: fixed;
+    bottom: 0px;
 }
 
 footer p {
     padding: 10px 0px;
     font-size: 24px;
 }
+
+
+/*Admin page style*/
+
+
+/*.admin {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.art-list {
+  width: 80%;
+}*/
+
+
+/*.admin>.aside{
+  margin: 0px 20px 0px 0px;
+  border: none;
+}*/
+
+.add-arrt, .del-arrt, .upd-arrt {
+    padding: 10px 20px 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-arrt {
+    background-color: #26A65B;
+    margin: 20px 20px;
+}
+
+.del-arrt {
+    background-color: #D91E18;
+}
+
+.upd-arrt {
+    background-color: #2574A9;
+}
+
+.art-det {
+    padding: 20px 20px 20px 20px;
+}
+
+.art-det p, h1 {
+    padding: 10px 0px 10px 0px;
+}
+
+.art-det hr {
+    margin: 5px 0px;
+}
+
+
+/*Finsh admin page style*/
+
+
+/*Add article page*/
+
+.add-main {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 20px 30px 20px;
+}
+
+.add-main button {
+    padding: 20px 30px 20px 30px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #26A65B;
+}
+
+#arttitle {
+    border: none;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.items {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+#artimg {
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*Finsh dd article page*/
