@@ -17,6 +17,7 @@ function createtables(client, cb) {
     category varchar(55),
     likes integer,
     doa date)`, function(err) {
+      console.log(err);
         if (err) throw err;
     });
 }

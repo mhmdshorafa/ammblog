@@ -23,8 +23,7 @@ server.register([require('vision'), require('inert')], (err) => {
             html: require('handlebars')
         },
         relativeTo: __dirname,
-        path: 'template',
-        helpersPath: 'helpers'
+        path: 'template'
     });
 
     server.route({
@@ -111,6 +110,7 @@ server.register([require('vision'), require('inert')], (err) => {
         handler: function(request, reply) {
             var id = encodeURIComponent(request.params.id);
             getarticles(id, (err, inform) => {
+              console.log(inform[0]);
                 reply.view('readmore', inform[0]);
             });
         }

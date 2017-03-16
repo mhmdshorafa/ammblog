@@ -108,9 +108,13 @@ button a {
 
 .article p {
     text-align: left;
-    margin: 0px 0px 0px 10px;
+    margin: 0px 10px 0px 10px;
     font-size: 18px;
     padding: 20px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 900px;
 }
 
 .article a {
@@ -148,8 +152,6 @@ footer {
     color: white;
     text-align: center;
     font-weight: bold;
-    position: fixed;
-    bottom: 0px;
 }
 
 footer p {
