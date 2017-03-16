@@ -66,8 +66,9 @@ server.register([require('vision'), require('inert')], (err) => {
         handler: function(request, reply) {
             var arr = arrvalues(request);
             insertarticle(arr, (err, inform) => {
-                reply().redirect('/admin');
+                console.log(inform);
             });
+            reply().redirect('/admin');
 
         }
     });
