@@ -70,19 +70,6 @@ test('endpoint test | GET/insertarticle | return html page to add Article', t =>
         });
 });
 
-test('endpoint test | GET/editarticle | return html page to edit Article', t => {
-    const request = Object.assign({}, requestDefaults, {
-        url: '/editarticle/19'
-    });
-    return server.inject(request)
-        .then(reply => {
-
-            var found_edit = reply.payload.indexOf('Edit Article');
-            t.notEqual(found_edit, -1, "The url GET/editarticle/20 redirect user to edit articles");
-            server.stop(t.end);
-        });
-});
-
 test('endpoint test | GET/insertarticle | return html page to add Article', t => {
     const request = Object.assign({}, requestDefaults, {
         method: 'POST',
@@ -103,7 +90,7 @@ test('endpoint test | GET/insertarticle | return html page to add Article', t =>
 
 test('endpoint test | GET/editarticle | return html page to edit Article', t => {
     const request = Object.assign({}, requestDefaults, {
-        url: '/editarticle/20'
+        url: '/editarticle/93'
     });
     return server.inject(request)
         .then(reply => {
@@ -114,14 +101,49 @@ test('endpoint test | GET/editarticle | return html page to edit Article', t => 
             server.stop(t.end);
         });
 });
+test('endpoint test | GET/updatearticle | return html page to  update the article', t => {
+    const request = Object.assign({}, requestDefaults, {
+        method: 'POST',
+        url: '/updatearticle/93',
+        payload: {
+            arttitle: 'Update Test Article 95',
+            artimg: '',
+            content: 'Test Article works',
+
+        }
+    });
+    return server.inject(request)
+        .then(reply => {
+            t.equal(reply.headers.location, '/admin', "The url POST/ return user to list of articles");
+            server.stop(t.end);
+        });
+});
+
 test('endpoint test | GET/readmore | return html page to add Article', t => {
     const request = Object.assign({}, requestDefaults, {
-        url: '/readmore/20',
+        url: '/readmore/93',
           });
           return server.inject(request)
               .then(reply => {
-                  var found = reply.payload.indexOf('Test Update Article');
-                  t.notEqual(found, -1, "The url GET/editarticle/20 redirect user to edit articles");
+                  var found = reply.payload.indexOf('Update Test Article 95');
+                  t.notEqual(found, -1, "The url GET/readmore redirect the article page");
                   server.stop(t.end);
+              });
+      });
+      test('endpoint test | GET/deletearticle | return html page to  list of articles without the deleted one', t => {
+          const request = Object.assign({}, requestDefaults, {
+              url: '/deletearticle/101'
+          });
+          return server.inject(request)
+              .then(reply => {
+                const request = Object.assign({}, requestDefaults, {
+                    url: '/admin'
+                });
+                server.inject(request).then(reply =>{
+                  var found_edit = reply.payload.indexOf('Update Test Article 20');
+
+                  t.equal(found_edit, -1, "The url  redirect to  list of articles without the deleted one");
+                  server.stop(t.end);
+                });
               });
       });
