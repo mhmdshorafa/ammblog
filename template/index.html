@@ -1,67 +1,248 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./template/style/style.css">
-</head>
+    <style media="screen">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
 
-<body>
+      body {
+        background-color: #ECF0F1;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .nav {
+        background-color: #2C3E50;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        width: 100%;
+      }
+
+      .nav li {
+        float: left;
+        padding: 20px 0px;
+        background-color: #E74C3C;
+      }
+
+      .nav a {
+        padding: 21px 40px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .nav a:hover {
+        color: #E74C3C;
+        background-color: #ECF0F1;
+      }
+
+      header {
+        background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 550px;
+        text-align: center;
+      }
+
+      header h1 {
+        color: white;
+        font-size: 72px;
+        font-weight: bold;
+        padding: 150px 0px;
+      }
+
+      header button {
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 18px 0px;
+        font-weight: bold;
+        background-color: #E74C3C;
+      }
+
+      button a {
+        color: white;
+        padding: 18px 24px;
+        text-decoration: none;
+      }
+
+      .main {
+        height: auto;
+        padding: 60px 20px 20px 20px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .articles {
+        width: 70%;
+        height: auto;
+      }
+
+      .article {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .articles div:first-child {
+        margin-top: 0px;
+      }
+
+      .article img {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      .article hr {
+        width: 30%;
+        margin: 0px auto;
+      }
+
+      .article h2 {
+        padding: 0px 0px 10px 0px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .article p {
+        text-align: left;
+        margin: 0px 0px 0px 10px;
+        font-size: 18px;
+        padding: 20px 0px;
+      }
+
+      .article a {
+        text-decoration: none;
+        text-align: left;
+        color: #E74C3C;
+        margin: 0px 0px 10px 10px;
+      }
+
+      .aside {
+        padding: 10px;
+        text-align: center;
+        background-color: #FFF;
+        border-top: 15px solid #2C3E50;
+      }
+
+      .aside img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        padding-bottom: 20px;
+      }
+
+      .aside h3 {
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+
+      footer {
+        height: auto;
+        width: 100%;
+        background-color: #2C3E50;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      footer p {
+        padding: 10px 0px;
+        font-size: 24px;
+      }
+
+      .main-aside {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0px 0px 0px 170px;
+      }
+
+      .serach {
+        padding: 10px 0px;
+        text-align: center;
+        width: 100%;
+      }
+
+      label {
+        color: #E74C3C;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
     <nav>
-        <div class="nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li style="float:right;"><a href="/admin">admin</a></li>
-            </ul>
-        </div>
+      <div class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li style="float:right;"><a href="/admin">admin</a></li>
+        </ul>
+      </div>
     </nav>
     <header>
-        <h1>Welcome :)</h1>
-        <button type="button" name="button"><a href="#main">Read More</a></button>
+      <h1>Welcome :)</h1>
+      <button type="button" name="button"><a href="#main">Read More</a></button>
     </header>
     <div class="main" id="main">
-        <section class="articles">
-            <input id="category" name="category" list="category">
-            <datalist id="category">
-              <option value="sports">
-              <option value="science">
-              <option value="art">
-              <option value="history">
-            </datalist>
-            <button onclick="search()">Search</button> {{#each p }}
-            <div class="article">
-                <img src="./template/images/{{this.img}}" alt="article image">
-                <h2>{{this.title}}</h2>
-                <hr>
-                <p>{{this.text}}</p>
-                <p>{{this.time}}</p>
-                <p>{{this.doa}}</p>
-                <label id="{{this.id}}" onclick="readmore(this.id)">Read More</label>
-            </div>
-            {{/each}}
-        </section>
+      <section class="articles">
+        {{#each p }}
+        <div class="article">
+          <img src="./template/images/{{this.img}}" alt="article image">
+          <h2>{{this.title}}</h2>
+          <hr>
+          <p>{{this.text}}</p>
+          <div style="padding-bottom:20px;">
+            <span>{{this.time}}</span><br>
+            <span>{{this.doa}}</span><br>
+            <span>{{this.category}}</span>
+          </div>
+          <label id="{{this.id}}" onclick="readmore(this.id)">Read More</label>
+        </div>
+        {{/each}}
+      </section>
+      <div class="main-aside">
+        <div class="serach">
+          <input id="input-category" name="category" list="category">
+          <datalist id="category">
+            <option value="sports">
+            <option value="science">
+            <option value="art">
+            <option value="history">
+      </datalist>
+          <button onclick="search()">Search</button>
+        </div>
         <aside class="aside">
-            <img src="./template/images/admin.png" alt="Admin">
-            <h3>Admin Name</h3>
-            <p>BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
+          <img src="./template/images/admin.png" alt="Admin">
+          <h3>AMM Team</h3>
         </aside>
+      </div>
     </div>
     <footer>
-        <p>Created By AMM &copy; 2017</p>
+      <p>Created By AMM &copy; 2017</p>
     </footer>
     <script>
-        function readmore(id) {
-            window.location = `/readmore/${id}`;
-        }
+      function readmore(id) {
+        window.location = `/readmore/${id}`;
+      }
 
-        function search() {
-            var val = document.getElementById('category').value;
-            console.log(val);
-            window.location = `/search/${val}`;
-        }
+      function search() {
+        var val = document.getElementById('input-category').value;
+        console.log(val);
+        window.location = `/search/${val}`;
+      }
     </script>
-</body>
+  </body>
 
 </html>

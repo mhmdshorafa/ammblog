@@ -1,5 +1,5 @@
 var moment = require('moment');
-module.exports= (request)=>{
+module.exports = (request) => {
 
   var arr = [];
   var now = moment()

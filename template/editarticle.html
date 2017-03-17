@@ -6,7 +6,179 @@
     <title>Admin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./template/style/style.css">
+    <style media="screen">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        background-color: #ECF0F1;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .nav {
+        background-color: #2C3E50;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        width: 100%;
+      }
+
+      .nav li {
+        float: left;
+        padding: 20px 0px;
+        background-color: #E74C3C;
+      }
+
+      .nav a {
+        padding: 21px 40px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .nav a:hover {
+        color: #E74C3C;
+        background-color: #ECF0F1;
+      }
+
+      header {
+        background-image: url('http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 550px;
+        text-align: center;
+      }
+
+      header h1 {
+        color: white;
+        font-size: 72px;
+        font-weight: bold;
+        padding: 150px 0px;
+      }
+
+      header button {
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 18px 0px;
+        font-weight: bold;
+        background-color: #E74C3C;
+      }
+
+      button a {
+        color: white;
+        padding: 18px 24px;
+        text-decoration: none;
+      }
+
+      .main {
+        height: auto;
+        padding: 60px 20px 20px 20px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .articles {
+        width: 60%;
+        height: auto;
+      }
+
+      .article {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .articles div:first-child {
+        margin-top: 0px;
+      }
+
+      .article img {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      .article hr {
+        width: 30%;
+        margin: 0px auto;
+      }
+
+      .article h2 {
+        padding: 0px 0px 10px 0px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .article p {
+        text-align: left;
+        margin: 0px 0px 0px 10px;
+        font-size: 18px;
+        padding: 20px 0px;
+      }
+
+      .article a {
+        text-decoration: none;
+        text-align: left;
+        color: #E74C3C;
+        margin: 0px 0px 10px 10px;
+      }
+
+      footer {
+        height: auto;
+        width: 100%;
+        background-color: #2C3E50;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      footer p {
+        padding: 10px 0px;
+        font-size: 24px;
+      }
+      /*Add article page*/
+
+      .add-main {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px 20px 30px 20px;
+      }
+
+      .add-main button {
+        padding: 20px 30px 20px 30px;
+        font-size: 20px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        background-color: #26A65B;
+      }
+
+      #arttitle {
+        border: none;
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+      }
+
+      .items {
+        width: 100%;
+        margin: 20px 0px;
+      }
+
+      #artimg {
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+      /*Finsh dd article page*/
+    </style>
   </head>
 
   <body>
@@ -20,17 +192,17 @@
     </nav>
     <div class="add-main">
       <form method="POST" action="/updatearticle/{{id}}">
-        <label value="">id = {{id}}</label>
-        <div class="items">
-          <input value="{{img}}" type="file" name="artimg">
-        </div>
         <label>Article title</label>
         <div class="items">
-          <input value="{{title}}" type="text" name="arttitle">
+          <input value="{{title}}" type="text" name="arttitle" id="arttitle">
         </div>
         <label>Content</label>
         <div class="items">
           <textarea rows="8" cols="80" name="content">{{text}}</textarea>
+        </div>
+        <label>Article image</label>
+        <div class="items">
+          <input value="{{img}}" type="file" name="artimg" id="artimg">
         </div>
         <button type="submit">Edit Article</button>
         <label id="error"></label>

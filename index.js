@@ -10,10 +10,11 @@ var client = connect.createclient(config.heroku);
 
 
 server.connection({
-    port: process.env.PORT || 8080
+  port: process.env.PORT || 8080
 });
 
 server.register([require('vision'), require('inert')], (err) => {
+
 
     server.views({
         engines: {
@@ -126,30 +127,32 @@ server.register([require('vision'), require('inert')], (err) => {
         }
     });
 
-    server.route({
-        method: 'GET',
-        path: '/template/style/{file*}',
-        handler: {
-            directory: {
-                path: '/template/style'
 
-            }
-        }
-    });
-    server.route({
-        method: 'GET',
-        path: '/template/images/{file*}',
-        handler: {
-            directory: {
-                path: 'template/images'
-            }
-        }
-    })
+
+  server.route({
+    method: 'GET',
+    path: '/template/style/{file*}',
+    handler: {
+      directory: {
+        path: 'template/style'
+
+      }
+    }
+  });
+  server.route({
+    method: 'GET',
+    path: '/template/images/{file*}',
+    handler: {
+      directory: {
+        path: 'template/images'
+      }
+    }
+  })
 });
 
 if (!module.parent) {
-    server.start(function() {
-        console.log("server running at localhost:8080");
-    });
+  server.start(function() {
+    console.log("server running at localhost:8080");
+  });
 }
 module.exports = server;
